@@ -46,6 +46,24 @@ def main():
         st.text('x')
     elif selected_lang == 'PHP':
         st.text('o')
+    
+    # 데이터프레임의 컬럼 이름을 보여주고, 
+    # 유저가 컬럼을 선택하면 
+    # 해당 컬러만 가져와서 
+    # 데이터프레임을 보여주고 싶다. 
+    column_list = st.multiselect('컬럼을 선택하세요.', df.columns)
+    print(column_list)
+    st.dataframe(df[column_list])
+        
+    age = st.slider('나이', min_value = 10, max_value= 110, step = 1)
+    st.text('나이는 ' + str(age) + '세 입니다.')
+
+    with st.expander('hello'):
+        st.text('안녕하세요.')
+
+
+# VSCode는 웹 대쉬보드만들 때 쓰는 거고. 
+# 백엔드개발자는 많지만 데이터분석할 줄 아는 사람은 많지 않다. 
 
 
 
